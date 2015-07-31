@@ -2,7 +2,8 @@ var gulp       = require('gulp'),
     path       = require('path'),
     reactify   = require('reactify'),
     browserify = require('gulp-browserify'),
-    notify     = require('gulp-notify');
+    notify     = require('gulp-notify'),
+    plumber    = require('gulp-plumber');
 
 
 var paths = {
@@ -31,6 +32,7 @@ gulp.task('scripts', function () {
       debug: true,
       cache: {}, packageCache: {}, fullPaths: true
     }))
+    .on('error', notify.onError('Error: <%= error.message %>'))
     .pipe(gulp.dest(paths.dest))
     .pipe(notify({
       message: 'Scripts complete!',
