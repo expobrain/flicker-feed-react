@@ -7,8 +7,8 @@ var gulp       = require('gulp'),
 
 
 var paths = {
-  src: path.join(__dirname, 'src/**/*.js'),
-  static: path.join(__dirname, 'static/**'),
+  src: path.join(__dirname, 'src'),
+  static: path.join(__dirname, 'static'),
   build: path.join(__dirname, 'build'),
   dest: path.join(__dirname, 'build/js'),
   srcRoot: path.join(__dirname, 'src')
@@ -16,7 +16,7 @@ var paths = {
 
 
 gulp.task('static', function () {
-  gulp.src(paths.static)
+  gulp.src(path.join(paths.static, '**'))
     .pipe(gulp.dest(paths.build))
     .pipe(notify({
       message: 'Static complete!',
@@ -26,7 +26,7 @@ gulp.task('static', function () {
 
 
 gulp.task('scripts', function () {
-  gulp.src(paths.src)
+  gulp.src(path.join(paths.src, 'app.js'))
     .pipe(browserify({
       transform: [reactify],
       debug: true,
@@ -45,7 +45,7 @@ gulp.task('build', ['scripts', 'static']);
 
 
 gulp.task('watch', ['build'], function () {
-  gulp.watch(paths.src, ['scripts']);
+  gulp.watch(path.join(paths.src, '**'), ['scripts']);
 });
 
 
