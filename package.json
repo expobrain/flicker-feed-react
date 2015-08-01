@@ -2,7 +2,12 @@
   "name": "flickr-feed",
   "version": "0.1.0",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "events": "^1.0.2",
+    "flux": "^2.0.3",
+    "keymirror": "^0.1.1",
+    "object-assign": "^3.0.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-browserify": "^0.5.1",

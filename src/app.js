@@ -1,6 +1,10 @@
+"use strict";
+
 var React = require('react');
+var FlickerFeedApp = require('./components/App');
+
 
 React.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('example')
+  <FlickerFeedApp />,
+  document.getElementById('feed')
 );
