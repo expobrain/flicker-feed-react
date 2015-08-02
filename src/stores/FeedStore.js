@@ -4,8 +4,8 @@ var $ = require('jquery');
 var _ = require('lodash');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
-var AppDispatcher = require('./dispatcher');
-var Constants = require('./constants');
+var AppDispatcher = require('../dispatcher');
+var Constants = require('../constants');
 
 
 var CHANGE_EVENT = 'feed_change';

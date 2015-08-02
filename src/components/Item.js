@@ -1,7 +1,7 @@
 "use strict";
 
 var React = require('react');
-var FeedStore = require('../store');
+var FeedStore = require('../stores/FeedStore');
 
 
 var Feeds = React.createClass({

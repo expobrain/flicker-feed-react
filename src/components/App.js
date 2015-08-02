@@ -2,7 +2,7 @@
 
 var React = require('react');
 var Actions = require('../actions');
-var FeedStore = require('../store');
+var FeedStore = require('../stores/FeedStore');
 var Item = require('./Item');
 
 
