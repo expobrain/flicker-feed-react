@@ -6,8 +6,8 @@ var Constants = require('./constants');
 
 var Actions = {
 
-  create: function(text) {
-    AppDispatcher.handleViewAction({
+  fetch_more: function() {
+    AppDispatcher.dispatch({
       actionType: Constants.FEED_FETCH_MORE
     });
   }

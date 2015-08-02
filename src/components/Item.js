@@ -7,7 +7,7 @@ var FeedStore = require('../store');
 var Feeds = React.createClass({
 
   render: function () {
-    return <li></li>
+    return <li><p>{this.props.data.link}</p></li>
   }
 });
 

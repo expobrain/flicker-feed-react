@@ -1,5 +1,7 @@
 "use strict";
 
+var $ = require('jquery');
+var _ = require('lodash');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 var AppDispatcher = require('./dispatcher');
@@ -7,6 +9,7 @@ var Constants = require('./constants');
 
 
 var CHANGE_EVENT = 'feed_change';
+var FLICKR_API_URL = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json';
 
 
 /* --------------------------------------------------------------------------
@@ -17,8 +20,30 @@ var CHANGE_EVENT = 'feed_change';
 var _feed = [];
 
 function _fetchMore () {
-  // implement me
-  return false;
+  $.ajax({
+      url: FLICKR_API_URL,
+      type: 'GET',
+      dataType: 'jsonp',
+      jsonp: false,
+      jsonpCallback: 'jsonFlickrFeed'
+    })
+    .done(function (data) {
+      var items;
+
+      // Append new data to current one
+      items = _feed.concat(data.items);
+
+      // Remove duplicates
+      items = _.unique(items, 'link');
+
+      // Save items and emit changes
+      _feed = items;
+
+      FeedStore.emitChange();
+    })
+    .fail(function (xhr, status, err) {
+      cosole.log(stauts, err.toString());
+    });
 }
 
 
@@ -46,13 +71,11 @@ var FeedStore = assign({}, EventEmitter.prototype, {
   },
 
   dispatchToken: AppDispatcher.register(function (payload) {
-    var action = payload.action;
+    var action = payload.actionType;
 
     switch (action) {
       case Constants.FEED_FETCH_MORE:
-        if (_fetchMore()) {
-          FeedStore.emitChange();
-        }
+        _fetchMore();
         break;
     }
   })
