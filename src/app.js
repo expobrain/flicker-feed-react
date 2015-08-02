@@ -1,10 +1,21 @@
 "use strict";
 
 var React = require('react');
-var FlickerFeedApp = require('./components/App');
+var Feed = require('./components/Feed');
+var FetchMore = require('./components/FetchMore');
 
 
-React.render(
-  <FlickerFeedApp />,
-  document.getElementById('feed')
-);
+var FlickrFeedApp = React.createClass({
+
+  render: function () {
+    return (
+      <div>
+        <div id="feed"><Feed /></div>
+        <div id="fetch-more"><FetchMore /></div>
+      </div>
+    );
+  }
+});
+
+
+React.render(<FlickrFeedApp />, document.getElementById('flicker-feed-app'));

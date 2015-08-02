@@ -6,7 +6,7 @@ var FeedStore = require('../stores/FeedStore');
 var Item = require('./Item');
 
 
-var FlickrFeedApp = React.createClass({
+var Feed = React.createClass({
 
   _getState: function () {
     return {
@@ -43,4 +43,4 @@ var FlickrFeedApp = React.createClass({
 });
 
 
-module.exports = FlickrFeedApp;
+module.exports = Feed;
