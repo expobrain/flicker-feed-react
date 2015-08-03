@@ -1,0 +1,23 @@
+{
+  "name": "flicker-feed-react",
+  "version": "0.1.0",
+  "homepage": "https://github.com/expobrain/flicker-feed-react",
+  "authors": [
+    "Daniele Esposti <daniele.esposti@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "^3.3.5",
+    "fontawesome": "^4.4.0"
+  }
+}

@@ -12,10 +12,13 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-bower": "^0.0.10",
     "gulp-browserify": "^0.5.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-reactify": "^3.0.1",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-sourcemaps": "^1.5.2",
     "gulp-watchify": "^0.5.0",
     "react": "^0.13.3",
     "reactify": "^1.1.1"
