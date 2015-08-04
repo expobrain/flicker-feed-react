@@ -12,7 +12,14 @@ var FetchMore = React.createClass({
 
   render: function () {
     return (
-      <button onClick={this.handleClick}>Fetch more!</button>
+      <div className="fetch-more">
+        <button
+          className="btn btn-lg btn-success"
+          onClick={this.handleClick}
+          >
+          Fetch more!
+        </button>
+      </div>
     );
   }
 });

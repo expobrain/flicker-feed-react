@@ -37,7 +37,7 @@ var Feed = React.createClass({
     })
 
     return (
-      <ul id="feed-items">{items}</ul>
+      <ul className="feed-items list-group">{items}</ul>
     );
   }
 });

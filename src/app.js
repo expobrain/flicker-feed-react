@@ -10,8 +10,9 @@ var FlickrFeedApp = React.createClass({
   render: function () {
     return (
       <div>
-        <div id="feed"><Feed /></div>
-        <div id="fetch-more"><FetchMore /></div>
+        <header>Flickr Feeder</header>
+        <Feed />
+        <footer><FetchMore /></footer>
       </div>
     );
   }

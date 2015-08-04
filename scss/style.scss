@@ -3,3 +3,23 @@ $font-family-base: 'Raleway', sans-serif;
 
 @import "bootstrap";
 @import "font-awesome";
+
+
+.fetch-more {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+
+.feed-item {
+  height: 300px;
+
+  .thumbnail {
+    position: absolute
+  }
+
+  .details {
+    padding-left: 300px;
+  }
+}

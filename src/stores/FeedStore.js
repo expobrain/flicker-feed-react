@@ -28,13 +28,11 @@ function _fetchMore () {
       jsonpCallback: 'jsonFlickrFeed'
     })
     .done(function (data) {
-      var items;
-
       // Append new data to current one
-      items = _feed.concat(data.items);
-
-      // Remove duplicates
-      items = _.unique(items, 'link');
+      _feed = _.chain(_feed)
+        .concat(data.items)  // Concat new feed
+        .unique('link')  // Remove duplicates
+        .value();
 
       // Save items and emit changes
       _feed = items;
