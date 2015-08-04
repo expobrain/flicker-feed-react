@@ -34,9 +34,7 @@ function _fetchMore () {
         .unique('link')  // Remove duplicates
         .value();
 
-      // Save items and emit changes
-      _feed = items;
-
+      // Emit change
       FeedStore.emitChange();
     })
     .fail(function (xhr, status, err) {
