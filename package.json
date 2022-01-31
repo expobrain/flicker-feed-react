@@ -20,7 +20,7 @@
     "gulp-ruby-sass": "^1.0.5",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-watchify": "^0.5.0",
-    "react": "^0.13.3",
+    "react": "^16.13.1",
     "reactify": "^1.1.1"
   },
   "author": "daniele.esposti@gmail.com",
